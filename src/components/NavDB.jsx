@@ -77,7 +77,7 @@ const NavDB = () => {
 
             <div className='flex justify-start px-3'><span className='text-blue-500 text-xs mt-6'>Account</span></div>
             
-            <li className={`${location.pathname === 'my-profile' ? 'bg-white text-[#0259dc]' : 'text-white'} px-3 py-2 rounded-sm`}>
+            <li className={`${location.pathname === '/my-profile' ? 'bg-white text-[#0259dc]' : 'text-white'} px-3 py-2 rounded-sm`}>
                 <Link to='/my-profile' className='flex justify-start items-center space-x-3 my-1'>
                     <FaRegUserCircle size={15} />
                     <span className={`${shownav ? 'block' : 'hidden'} lg:block`}>My Profile</span>
