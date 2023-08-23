@@ -1,37 +1,41 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
 
-    //const loginData = JSON.parse(localStorage.getItem('login'));
-
+    const userData = JSON.parse(localStorage.getItem('logged_in'));
+    const userInfo = localStorage.getItem('userInfo');
     
-    //const [token, setToken] = useState(loginData ? loginData.token : '');
-    //const [user, setUser] = useState(loginData ? loginData.user : null);
+    const [token, setToken] = useState(userData ? userData?.Session : '');
+    const [user, setUser] = useState(userInfo ? JSON.parse(userInfo) : null);
+    const [userid, setUserid] = useState(userData ? userData?.ChallengeParameters?.USER_ID_FOR_SRP : '');
 
     //const [activenav, setActivenav] = useState('dashboard');
     const [shownav, setShownav] = useState(false);
 
-    /**const logout = () => {
+    const logout = () => {
         setToken('');
         setUser(null);
-        localStorage.removeItem('login');
+        setUserid('');
+        localStorage.removeItem('logged_in');
+        localStorage.removeItem('userInfo');
         window.location.reload();
     }
 
-    const updateActivenav = (val) => {
+    /**const updateActivenav = (val) => {
         setActivenav(val);
-    }
+    }*/
 
     useEffect(() => {
         
-        if(localStorage.getItem('login')){
+        if(localStorage.getItem('logged_in')){
             
-            setToken(loginData.token);
-            setUser(loginData.user);
+            setToken(userData?.Session);
+            setUser(userInfo);
+            setUserid(userData?.ChallengeParameters?.USER_ID_FOR_SRP);
         }
-    }, [loginData])*/
+    }, [])
 
     const updateShownav = () => {
         setShownav(!shownav);
@@ -39,7 +43,7 @@ const AuthContextProvider = (props) => {
 
 
     return(
-        <AuthContext.Provider value={{ shownav, updateShownav }}>
+        <AuthContext.Provider value={{ token, user, userid, shownav, updateShownav, logout }}>
             {props.children}
         </AuthContext.Provider>
     )
