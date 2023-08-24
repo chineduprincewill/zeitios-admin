@@ -37,7 +37,7 @@ const Navbar = () => {
                     <img src={Logo} alt="Logo" className="" />
                 </div>
 
-                <div className="flex justify-around items-center max-sm:absolute max-lg:absolute max-sm:mt-28 max-lg:mt-28">
+                <div className="flex justify-around items-center max-sm:absolute max-lg:absolute max-sm:mt-28 max-lg:mt-28 max-sm:bg-basic max-sm:p-2 max-sm:w-full">
                     <div className="text-white lg:px-2 px-1 max-sm:text-sm max-md:text-sm hover:cursor-pointer hover:text-blue-100"> Home </div>
                     <div className="text-white lg:px-2 px-1 max-sm:text-sm max-md:text-sm hover:cursor-pointer hover:text-blue-100"> About </div>
                     <div className="text-white lg:px-2 flex flex-col justify-around items-center relative px-1 max-sm:text-sm max-md:text-sm">  <div className="text-white lg:px-2 px-1 flex justify-around items-center hover:cursor-pointer hover:text-blue-100"> Browse Jobs <MdKeyboardArrowDown onClick={handleClick} className='h-4 w-4' /> </div>

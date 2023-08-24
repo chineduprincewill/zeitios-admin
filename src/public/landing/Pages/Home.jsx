@@ -33,32 +33,51 @@ import SliderItems from './SliderItems'
 import twelvethPicture from '../../../assets/image/twelveth_picture.png'
 
 const Home = () => {
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const Data = sliderComponents
     const [data, setData] = useState({ name: '', email: '', phoneNumber: '', message: '' })
     const [number, setNumber] = useState(3)
+    const [secondNumber, setSecondNumber] = useState(1)
     const [currentColorIndex, setCurrentColorIndex] = useState(0);
     const colors = ['bg-dark', 'bg-darkerBlue',];
     const image = ['bg-home', '',];
     const secondImage = ['', twelvethPicture];
     const sliderData = Data[number]
     const secondHandleClick = (e) => {
-        console.log(number)
+        console.log(number, secondNumber)
+        if (screenWidth < 640) {
+            if (secondNumber === 6) {
+                setSecondNumber(1)
+            } else {
+                setSecondNumber(secondNumber + 1)
+            }
+        }
         if (number === 6) {
+
             setNumber(3)
         } else {
             setNumber(number + 1)
+
         }
 
 
     }
     const firstHandleClick = (e) => {
-        console.log(number)
+        console.log(number, secondNumber)
+        if (screenWidth < 640) {
+            if (secondNumber === 1) {
+                setSecondNumber(6)
+            } else {
+                setSecondNumber(secondNumber - 1)
+            }
+        }
         if (number === 3) {
             setNumber(6)
         } else {
             setNumber(number - 1)
         }
     }
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
@@ -70,6 +89,12 @@ const Home = () => {
     const currentColor = colors[currentColorIndex];
     const currentImage = image[currentColorIndex]
     const currentSecondImage = secondImage[currentColorIndex]
+
+    // if (screenWidth < 640) {
+    //     setNumber(1)
+    //     secondSlideComponents = sliderComponents.slice(number - 1, number)
+    // }
+    //console.log(screenWidth)
     return (
         <div>
 
@@ -77,15 +102,15 @@ const Home = () => {
                 <Navbar />
                 <div className='flex'>
                     <div className='w-2/3 pb-24'>
-                        <h1 className="text-center text-white md:text-5xl text-2xl  font-bold mt-20 max-sm:mt-[6.5rem] max-md:mt-[6.5rem] max-lg:mt-[7rem] w-full">Find the best Freelance service for your business</h1>
-                        <p className="text-center font-normal text-white md:text-2xl text-sm w-full">Work with talented people and see your ideas turn into reality</p>
-                        <div className=" w-full md:w-2/3 mx-auto  flex justify-center  items-center mt-20">
+                        <h1 className="text-center text-white md:text-5xl text-2xl  font-bold mt-20 max-sm:mt-[6.5rem] max-md:mt-[6.5rem] max-lg:mt-[7rem] w-full max-md:pl-3">Find the best Freelance service for your business</h1>
+                        <p className="text-center font-normal text-white md:text-2xl text-sm w-full max-md:pl-3">Work with talented people and see your ideas turn into reality</p>
+                        <div className=" w-full md:w-2/3 mx-auto  flex justify-center  items-center mt-20 max-md:pl-3">
                             <button className="text-white bg-primary md:p-3 p-2 rounded-lg mr-5 lg:mr-16 hover:cursor-pointer hover:bg-transparent hover:border hover:border-white">Hire a team</button>
                             <button className="text-white border border-white md:p-3 p-2 rounded-lg hover:cursor-pointer hover:bg-primary hover:border-none">Hire a freelancer</button>
                         </div>
                     </div>
                     <div className='w-1/3 self-end flex justify-center'>
-                        <img src={currentSecondImage} alt="" className={` w-64   transition-opacity duration-500 ${currentSecondImage ? 'opacity-100' : 'opacity-0'
+                        <img src={currentSecondImage} alt="" className={` w-64 max-md:w-52   transition-opacity duration-500 ${currentSecondImage ? 'opacity-100' : 'opacity-0'
                             }`} />
                     </div>
                 </div>
@@ -225,9 +250,11 @@ const Home = () => {
                         <p className=" text-primary text-[16px]"><a href="/">View All</a></p>
                     </div>
                 </div>
-                <div className="flex absolute z-10 cursor-pointer opacity-50 top-0 bottom-0 m-auto right-0 lg:right-5 md:right-1 h-10 w-10 bg-transparent text-black rounded-full items-center justify-center border border-black" onClick={secondHandleClick}><MdKeyboardArrowRight className='w-10 h-10' /></div>
+                <div className="flex absolute z-10 cursor-pointer opacity-50 top-0 bottom-0 m-auto right-0 max-sm:right-1 lg:right-5 md:right-1 h-10 w-10 bg-transparent text-black rounded-full items-center justify-center border border-black" onClick={secondHandleClick}><MdKeyboardArrowRight className='w-10 h-10' /></div>
                 <div className="w-11/12 mx-auto flex max-md:flex-wrap justify-between items-stretch p-4 max-sm:p-2 relative text-[14px]">
-                    {sliderComponents.slice(number - 3, number).map((slide) => {
+                    {screenWidth < 640 ? sliderComponents.slice(secondNumber - 1, secondNumber).map((slide) => {
+                        return <SliderItems sliderData={slide} key={slide.id} />
+                    }) : sliderComponents.slice(number - 3, number).map((slide) => {
                         return <SliderItems sliderData={slide} key={slide.id} />
                     })}
                     {/* <SliderItems sliderData={sliderData} /> */}
@@ -253,7 +280,7 @@ const Home = () => {
                         </div>
                     </div> */}
                 </div>
-                <div className="flex z-10 absolute cursor-pointer opacity-50 top-0  bottom-0 m-auto left-0 lg:left-5 md:left-1 h-10 w-10 bg-transparent text-black rounded-full items-center justify-center border border-black" onClick={firstHandleClick}>< MdKeyboardArrowLeft className='w-10 h-10' /></div>
+                <div className="flex z-10 absolute cursor-pointer opacity-50 top-0  bottom-0 m-auto left-0 max-sm:left-1 lg:left-5 md:left-1 h-10 w-10 bg-transparent text-black rounded-full items-center justify-center border border-black" onClick={firstHandleClick}>< MdKeyboardArrowLeft className='w-10 h-10' /></div>
             </div>
             <div className="w-full">
                 <div className="w-11/12 mx-auto p-4 pt-16 text-[16px]">
@@ -519,34 +546,34 @@ const Home = () => {
 
                 </div>
             </div>
-            <div className='w-full bg-lightPink pt-16 px-10 max-sm:px-5 pb-16'>
+            <div className='w-full bg-[#ffb19d] pt-16 px-16 max-sm:px-5 pb-16'>
                 <div className=''>
                     <h1 className="font-bold text-3xl"> Contact Us</h1>
                     <p className='text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
                 </div>
                 <div className='w-full flex items-center justify-between mt-10'>
-                    <form className=' bg-white w-1/3 max-sm:w-full  max-lg:w-2/5 max-xl:w-2/5 flex flex-col items-center shadow-md rounded-md text-[14px]'>
-                        <div className='flex flex-col justify-center w-5/8 py-3'>
+                    <form className=' bg-white w-1/3 max-sm:w-full  max-lg:w-2/5 max-xl:w-3/11 flex flex-col items-center shadow-[0px_34px_34px_0px_rgba(13,_46,_97,_0.05)] rounded-md text-[14px] border-solid border-[#f5f5f5] border pt-10'>
+                        <div className='flex flex-col justify-center w-5/8 my-3 text-[#1f1f1f]'>
                             <label>Name</label>
-                            <input type="text" id="name" value={data.name} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='border border-black bg-transparent rounded-md' />
+                            <input type="text" id="name" value={data.name} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='shrink-0 border-[0.05rem] p-1 border-solid border-[#c4c4c4] bg-transparent rounded-sm' />
                         </div>
-                        <div className='flex flex-col justify-center w-5/8 py-3'>
+                        <div className='flex flex-col justify-center w-5/8 my-3'>
                             <label>Email</label>
-                            <input type="text" id="email" value={data.email} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='border border-black bg-transparent rounded-md' />
+                            <input type="text" id="email" value={data.email} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='shrink-0 border-[0.05rem] p-1 border-solid border-[#c4c4c4] bg-transparent rounded-sm' />
                         </div>
-                        <div className='flex flex-col justify-center w-5/8 py-3'>
+                        <div className='flex flex-col justify-center w-5/8 my-3'>
                             <label>Phone Number</label>
-                            <input type="text" id="phoneNumber" value={data.phoneNumber} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='border border-black bg-transparent rounded-md' />
+                            <input type="text" id="phoneNumber" value={data.phoneNumber} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='shrink-0 border-[0.05rem] p-1 border-solid border-[#c4c4c4] bg-transparent rounded-sm' />
                         </div>
-                        <div className='flex flex-col justify-center w-5/8 py-3'>
+                        <div className='flex flex-col justify-center w-5/8 mt-3 mb-5'>
                             <label>Message</label>
-                            <textarea rows="4" id="message" value={data.message} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='border border-black bg-transparent rounded-md' />
+                            <textarea rows="4" id="message" value={data.message} onChange={(e) => { setData({ ...data, [e.target.id]: e.target.value }) }} className='shrink-0 border-[0.05rem] p-1 border-solid border-[#c4c4c4] bg-transparent rounded-sm w-full resize-none' />
                         </div>
-                        <div className='py-5 w-5/8'>
-                            <button className='bg-darkBlue text-white text-center w-full text-[20px] rounded-md '> Submit</button>
+                        <div className='mt-5 mb-8 w-5/8'>
+                            <button className='bg-darkBlue text-white text-center w-full text-[20px] rounded-sm p-2'> Submit</button>
                         </div>
                     </form>
-                    <div className=' bg-lighterGray bg-eighthPicture bg-blend-multiply w-5/9 h-96 max-sm:h-0 max-sm:w-0'></div>
+                    <div className='  bg-eighthPicture w-4/9 h-96 max-sm:h-0 max-sm:w-0'></div>
                 </div>
             </div>
             <div className=' bg-darkerBlue w-full px-5 pt-10 mt-20'>
@@ -606,7 +633,7 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div className='flex justify-between items-center w-full py-10 px-10 max-sm:px-0 max-md:px-5 border-t b border-white max-sm:flex-col max-sm:items-center'>
+                <div className='flex justify-between items-center w-full py-10 px-10 max-sm:px-0 max-md:px-5 border-t-[0.001px] border-white max-sm:flex-col max-sm:items-center'>
                     <div className='w-1/3 max-lg:w-1/4 max-sm:w-1/5 max-sm:my-2 '><img src={Logo} alt="" /></div>
                     <div className='w-1/3 max-lg:w-1/2 max-sm:w-3/4 text-white max-sm:text-center max-sm:my-2'>© 2023 Zeitios. All Rights Reserved. </div>
                     <div className='w-2/11 max-lg:w-1/4 max-sm:w-1/2 flex items-center justify-around max-sm:my-2'>

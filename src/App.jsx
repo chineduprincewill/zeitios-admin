@@ -4,8 +4,8 @@ import Home from './public/landing/Pages/Home'
 import Login from './public/authentication/Login'
 import Register from './public/authentication/Register'
 import Error from './public/landing/Pages/Error'
-import ForgotPassword from './public/landing/Pages/ForgotPassword'
-import Verify from './public/landing/Pages/Verify'
+//import ForgotPassword from './public/landing/Pages/ForgotPassword'
+//import Verify from './public/landing/Pages/Verify'
 import ResetPassword from './public/landing/Pages/ResetPassword'
 import RegisterOptions from './public/authentication/RegisterOptions'
 import ResendCode from './public/authentication/ResendCode'
@@ -27,6 +27,7 @@ import ClientStatement from './protected/client/pages/ClientStatement'
 import ClientMessages from './protected/client/pages/ClientMessages'
 import MyProject from './protected/client/pages/MyProject'
 import Saved from './protected/client/pages/Saved'
+import FreelancerMessages from './protected/freelancing/pages/FreelancerMessages'
 
 
 function App() {
@@ -43,12 +44,13 @@ function App() {
               <Route path="/login" exact element={<Login />} />
               <Route path="/register-options" exact element={<RegisterOptions />} />
               <Route path='/register' exact element={<Register />} />
-              <Route path="/forgot-password" exact element={<ForgotPassword />} />
+              {/**<Route path="/forgot-password" exact element={<ForgotPassword />} />
+              <Route path="/user/verify-email" exact element={<Verify />} />*/}
               <Route path="/resend-code" exact element={<ResendCode />} />
-              <Route path="/user/verify-email" exact element={<Verify />} />
               <Route path="/user/reset-password" exact element={<ResetPassword />} />
               <Route path="/dashboard" exact element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="/freelancer-dashboard" exact element={<PrivateRoute><FreelancerDashboard /></PrivateRoute>} />
+              <Route path='/freelancer-messages' exact element={<PrivateRoute><FreelancerMessages /></PrivateRoute>} />
               <Route path="/freelancer-payouts" exact element={<PrivateRoute><FreelancerPayouts /></PrivateRoute>} />
               <Route path="/freelancer-reviews" exact element={<PrivateRoute><FreelancerReviews /></PrivateRoute>} />
               <Route path="/freelancer-statement" exact element={<PrivateRoute><FreelancerStatment /></PrivateRoute>} />

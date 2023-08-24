@@ -7,7 +7,7 @@ const SliderItems = ({ sliderData }) => {
 
     return (
 
-        <div className="   w-2/7 max-sm:w-full max-md:w-3/10 bg-white  shadow-md rounded-md  mb-10  font-['Montserrat']">
+        <div className="   w-2/7 max-sm:w-5/6 max-sm:mx-auto max-md:w-3/10 bg-white  shadow-md rounded-md  mb-10  font-['Montserrat']">
             <div className='mb-5 w-full border'>
                 <img src={sliderData.img} alt="image" className="object-cover w-full" />
             </div>

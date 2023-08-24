@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { registerUser } from './actions/authActions'
 import Navigate from '../../common/Navigate'
 import Banner from '../../common/Banner'
@@ -7,6 +7,7 @@ import Banner from '../../common/Banner'
 const Register = () => {
 
     const { state } = useLocation();
+    const navigate = useNavigate();
 
     const [firstname, setFirstname] = useState();
     const [lastname, setLastname] = useState();
@@ -40,6 +41,11 @@ const Register = () => {
         console.log(data);
 
         registerUser(data, setSuccess, setError, setRegistering);
+    }
+
+    if(success !== null){
+        alert('Registration successfull! Your login detail has been forwarded to your email and phone number.');
+        navigate('/login');
     }
 
     return (
@@ -122,6 +128,7 @@ const Register = () => {
                                     onChange={(e) => setCountry(e.target.value)}
                                     required
                                 >
+                                    <option value="">select country</option>
                                     <option value="United States">United States</option>
                                     <option value="Nigeria">Nigeria</option>
                                 </select>

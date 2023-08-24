@@ -126,6 +126,12 @@ const NavDB = () => {
             icon: <BsBriefcase size={15} />
         },
         {
+            id: 2,
+            title: "Messages",
+            url: "/freelancer-messages",
+            icon: <FaRegComment size={15} />
+        },
+        {
             id: 3,
             title: "Reviews",
             url: "/freelancer-reviews",
@@ -176,7 +182,7 @@ const NavDB = () => {
             }
 
             {
-                userRole === 'Freelancers' && (
+                userRole === 'Freelancer' && (
                     <Fragment>
                         <div className='flex justify-start px-3'><span className='text-blue-500 text-xs mt-6'>Organize and Manage</span></div>
             
