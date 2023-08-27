@@ -18,7 +18,7 @@ const Header = () => {
     }
 
     return (
-        <div className='w-full flex justify-between items-center m-0 px-4 py-4 bg-[#0259dc]'>
+        <div className='fixed top-0 z-30 w-full flex justify-between items-center m-0 px-4 py-4 bg-[#0259dc]'>
             <div>   
                 <img src={Logo} alt='logo' className='md:hidden' />
             </div>
