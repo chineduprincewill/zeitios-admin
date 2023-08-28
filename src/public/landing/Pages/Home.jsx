@@ -257,28 +257,7 @@ const Home = () => {
                     }) : sliderComponents.slice(number - 3, number).map((slide) => {
                         return <SliderItems sliderData={slide} key={slide.id} />
                     })}
-                    {/* <SliderItems sliderData={sliderData} /> */}
 
-                    {/* <div className="   w-2/7 max-sm:w-full max-md:w-5/12 bg-white  shadow-2xl  mb-10  ">
-                        <div className='mb-5 w-full border'>
-                            <img src={eleventhPicture} alt="image" className="object-cover w-full" />
-                        </div>
-                        <div className=' my-2 max-sm:my-5 text-lightGray px-3'>Web Development</div>
-                        <div className=' my-2 max-sm:my-5  px-3'>I will design a creative modern websites in figma</div>
-     3                   <div className="w-full  flex justify-between items-center mt-5 px-3 ">
-                            <div className='w-2/3 flex justify-start items-center'><img src={starIcon} alt="star icon" /><p className="ml-4 text-lightGray"><span className="font-medium text-darkGray pr-2">4.51 </span>  42 reviews</p></div>
-
-                        </div>
-                        <div className='flex w-full items-center justify-between my-3 px-3'>
-                            <div className='w-1/2 flex items-start justify-start'>
-                                <div className='rounded-full w-6 h-4'>
-                                    <img src={secondPicture} alt="image" />
-                                </div>
-                                <div>15 articles</div>
-                            </div>
-                            <div className='w-1/2 text-end text-lightGray'>Starting at <span className=' text-darkGray'>$123</span> </div>
-                        </div>
-                    </div> */}
                 </div>
                 <div className="flex z-10 absolute cursor-pointer opacity-50 top-0  bottom-0 m-auto left-0 max-sm:left-1 lg:left-5 md:left-1 h-10 w-10 bg-transparent text-black rounded-full items-center justify-center border border-black" onClick={firstHandleClick}>< MdKeyboardArrowLeft className='w-10 h-10' /></div>
             </div>
@@ -471,7 +450,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="w-full relative">
-                <div className='bg-lightPink w-2/3 max-lg:w-11/12  max-sm:w-full pt-16 pb-[26rem] z-2 absolute top-0 left-0  pl-16 max-lg:pl-8 max-sm:pl-4'>
+                <div className='bg-lightPink w-2/3 max-lg:w-11/12  max-sm:w-full pt-16  pb-[28rem] z-2 absolute top-0 left-0  pl-16 max-lg:pl-8 max-sm:pl-4'>
                     <div>
                         <h2 className="font-bold text-3xl ">Need something done?</h2>
                         <p className=' max-lg:w-1/2 max-sm:w-full text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
@@ -483,22 +462,22 @@ const Home = () => {
                     {/* <img src={fourthPicture} alt="" className='object-cover' /> */}
                 </div>
                 <div className="flex  max-md:flex-wrap max-lg:flex-wrap  items-center justify-between w-7/12 max-lg:w-5/6 max-sm:w-11/12 mt-10
-                absolute left-16 max-lg:left-8 max-sm:left-4 top-32 max-lg:top-32 max-sm:top-28 z-30 cursor-pointer text-sm">
-                    <div className="pt-5 shadow-md rounded-md px-4 max-sm:h-80 bg-white w-2/7 max-sm:flex max-sm:flex-col max-sm:justify-center   max-lg:w-3/10 max-lg:mb-5 ">
+                absolute left-16 max-lg:left-8 max-sm:left-4 top-32 max-lg:top-32 max-sm:top-40 z-30 cursor-pointer text-sm">
+                    <div className="pt-5 shadow-md rounded-md px-4 max-sm:px-2 max-sm:h-80 bg-white w-2/7 max-sm:flex max-sm:flex-col max-sm:justify-center   max-lg:w-3/10 max-lg:mb-5 ">
                         <img src={bagIcon} alt="icon" className='max-sm:h-10 max-sm:w-10' />
                         <div className='mt-5'>
                             <p className='text-sm mb-5 font-medium'>Post a Job</p>
                             <p className=' mb-5 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                         </div>
                     </div>
-                    <div className="pt-5 shadow-md rounded-md px-4 max-sm:h-80 max-sm:flex max-sm:flex-col max-sm:justify-center   bg-white w-2/7  max-lg:w-3/10 max-lg:mb-5   ">
+                    <div className="pt-5 shadow-md rounded-md px-4 max-sm:px-2 max-sm:h-80 max-sm:flex max-sm:flex-col max-sm:justify-center   bg-white w-2/7  max-lg:w-3/10 max-lg:mb-5   ">
                         <img src={profileIcon} alt="icon" className='max-sm:h-10 max-sm:w-10' />
                         <div className='mt-5'>
                             <p className='text-sm font-medium mb-5'>Choose Freelancer</p>
                             <p className=' mb-5 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                         </div>
                     </div>
-                    <div className="pt-5 shadow-md rounded-md px-4 max-sm:h-80 max-sm:flex max-sm:flex-col max-sm:justify-center  bg-white w-2/7  max-lg:w-3/10 max-lg:mb-5  ">
+                    <div className="pt-5 shadow-md rounded-md px-4 max-sm:px-2 max-sm:h-80 max-sm:flex max-sm:flex-col max-sm:justify-center  bg-white w-2/7  max-lg:w-3/10 max-lg:mb-5  ">
                         <img src={boxIcon} alt="icon" className='max-sm:h-10 max-sm:w-10' />
                         <div className='mt-5'>
                             <p className='text-sm font-medium mb-5'>Pay safely</p>

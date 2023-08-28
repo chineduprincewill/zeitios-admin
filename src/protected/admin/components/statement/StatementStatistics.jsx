@@ -1,6 +1,10 @@
 import React from 'react'
 import { formatCurrency } from '../../../../common/helpers/checkRole'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
+import { RiExchangeDollarLine } from 'react-icons/ri'
+import { MdPendingActions } from 'react-icons/md'
+import { TbFileArrowLeft } from 'react-icons/tb'
+import { GrAtm } from 'react-icons/gr'
 
 const StatementStatistics = () => {
 
@@ -12,7 +16,7 @@ const StatementStatistics = () => {
                 </div>
                 <div className='w-full flex justify-between items-center mb-3 text-lg'>
                     <span>{ formatCurrency(1550)}</span>
-                    <AiOutlineCheckCircle size={20} className='text-[#0259dc]' />
+                    <RiExchangeDollarLine  size={20} className='text-[#0259dc]' />
                 </div>
             </div>
 
@@ -22,7 +26,7 @@ const StatementStatistics = () => {
                 </div>
                 <div className='w-full flex justify-between items-center mb-3 text-lg'>
                     <span>{ formatCurrency(750)}</span>
-                    <AiOutlineCheckCircle size={20} className='text-[#0259dc]' />
+                    <GrAtm size={20} className='text-[#0259dc]' />
                 </div>
             </div>
 
@@ -32,7 +36,7 @@ const StatementStatistics = () => {
                 </div>
                 <div className='w-full flex justify-between items-center mb-3 text-lg'>
                     <span>{ formatCurrency(800)}</span>
-                    <AiOutlineCheckCircle size={20} className='text-[#0259dc]' />
+                    <MdPendingActions size={20} className='text-[#0259dc]' />
                 </div>
             </div>
 
@@ -42,7 +46,7 @@ const StatementStatistics = () => {
                 </div>
                 <div className='w-full flex justify-between items-center mb-3 text-lg'>
                     <span>{ formatCurrency(150)}</span>
-                    <AiOutlineCheckCircle size={20} className='text-[#0259dc]' />
+                    <TbFileArrowLeft size={20} className='text-[#0259dc]' />
                 </div>
             </div>
         </div>

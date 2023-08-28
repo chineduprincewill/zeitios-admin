@@ -4,6 +4,7 @@ import PageHeader from '../../../common/PageHeader'
 import { formatCurrency, formatDateWithFullMonthName, statusColor } from '../../../common/helpers/checkRole';
 import { payoutData } from '../components/payouts/data';
 import PayoutsTable from '../components/payouts/PayoutsTable';
+import PaymentMethods from '../components/payouts/PaymentMethods';
 
 const Payouts = () => {
 
@@ -47,9 +48,10 @@ const Payouts = () => {
             <Sidebar />
             <div className='grow'>
                 <div className='hidden md:w-[80px] lg:w-[200px]'>...</div>
-                <div className='md:ml-[80px] lg:ml-[250px] bg-gray-100 px-3 lg:px-12'>
+                <div className='md:ml-[80px] lg:ml-[250px] bg-gray-100 px-3 lg:px-12 pb-6'>
                     <PageHeader />
                     <PayoutsTable columns={columns} payouts={payouts} />
+                    <PaymentMethods />
                 </div>
             </div>
         </div>

@@ -25,18 +25,22 @@ const PayoutsTable = ({ columns, payouts }) => {
 
 
     return (
-        <div className='overflow-auto w-[100%] mt-16 mb-12 bg-white p-4 rounded-md'>
-            <Search setSearch={setSearch} />
-            <DataTable 
-                columns={columns} data={searchData}
-                paginationTotalRows={payouts.totalCount}
-                className='w-full table table-responsive'
-                striped={true}
-                responsive={true}
-                overflowX
-                pagination
-                customStyles={tableCustomStyles}
-            ></DataTable>
+        <div>
+            <div className='bg-white w-full flex justify-end py-4 px-2 md:px-5 mt-3'>
+                <Search setSearch={setSearch} />
+            </div>
+            <div className='overflow-auto w-[100%] mt-0 mb-12 bg-white p-4 rounded-md shadow-xl'>
+                <DataTable 
+                    columns={columns} data={searchData}
+                    paginationTotalRows={payouts.totalCount}
+                    className='w-full table table-responsive'
+                    striped={true}
+                    responsive={true}
+                    overflowX
+                    pagination
+                    customStyles={tableCustomStyles}
+                ></DataTable>
+            </div>
         </div>
     )
 }

@@ -68,3 +68,75 @@ export const sliderComponents = [
 
 
 ];
+export const PayoutData = [
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Paypal",
+        status: "Pending",
+        color: "amber-300"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Payoneer",
+        status: "Pending",
+        color: "amber-300"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Bank Transfer",
+        status: "Completed",
+        color: "lime-600"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Payoneer",
+        status: "Completed",
+        color: "lime-600"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Bank Transfer",
+        status: "Cancel",
+        color: "orange-600"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Paypal",
+        status: "Completed",
+        color: "lime-600"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Paypal",
+        status: "Pending",
+        color: "amber-300"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Bank Transfer",
+        status: "Completed",
+        color: "lime-600"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Payoneer",
+        status: "Completed",
+        color: "lime-600"
+    },
+    {
+        amount: "1500",
+        date: "January 15,2023",
+        method: "Paypal",
+        status: "Pending",
+        color: "amber-300"
+    }
+]
