@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import searchIcon from "../../assets/icons/Search2.png";
 import mailIcon from "../../assets/icons/mail.png";
 import bellIcon from "../../assets/icons/bell.png";
 import secondProfileIcon from "../../assets/icons/second_profile.png";
-import thirdProfileIcon from "../../assets/icons/third_profile.png";
 import dropdownIcon from "../../assets/icons/dropdown.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";

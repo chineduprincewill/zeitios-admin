@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from '../../../common/Sidebar'
 import filterIcon from '../../../assets/icons/filter_icon.png'
-import ReviewNotification from '../components/ReviewNotification'
+import ReviewNotification from '../Components/ReviewNotification'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 

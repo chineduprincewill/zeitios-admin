@@ -6,7 +6,7 @@ import send from '../../../assets/icons/send_icon.png'
 import fileAttach from '../../../assets/icons/file_attach_icon.png'
 import fourthProfilePicture from '../../../assets/icons/fourth_profile.png'
 import thirdProfileIcon from '../../../assets/icons/third_profile.png'
-import MessageNotifications from '../components/MessageNotifications'
+import MessageNotifications from '../Components/MessageNotifications'
 
 const FreelancerMessages = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
