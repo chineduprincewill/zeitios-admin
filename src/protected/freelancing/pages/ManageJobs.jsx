@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from '../../../common/Sidebar'
 import filterIcon from '../../../assets/icons/filter_icon.png'
-import JobNotifications from '../Components/JobNotifications'
+import JobNotifications from '../components/JobNotifications'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
