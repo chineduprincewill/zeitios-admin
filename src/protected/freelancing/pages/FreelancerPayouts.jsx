@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from '../../../common/Sidebar'
 import filterIcon from '../../../assets/icons/filter_icon.png'
-import PayoutNotifications from '../Components/PayoutNotifications'
+import PayoutNotifications from '../components/PayoutNotifications'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { PayoutData } from '../../../data'
